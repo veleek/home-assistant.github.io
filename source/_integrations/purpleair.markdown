@@ -70,6 +70,18 @@ equates to a "Good" AQI rating.
 Therefore, a common strategy would be to use the guidelines for the particulate types
 provided by the PurpleAir integration and "merge" them into a single AQI rating.
 
+### Using the PM2.5 average sensors
+
+PurpleAir calculates PM2.5 averages over 10 minutes, 30 minutes, 1 hour, 6 hours,
+24 hours, and 1 week from the sensor's full-resolution readings. The integration
+provides each of these as a sensor (for example, **PM2.5 24-hour average**). These
+sensors are disabled by default; [enable them](/docs/configuration/customizing-devices/#disabling-or-enabling-an-entity)
+to use them.
+
+The PM2.5 24-hour average sensor can be used directly in place of the PM2.5
+`statistics` sensor below. PurpleAir does not provide averages for PM10.0, so a
+`statistics` sensor is still needed for it.
+
 ### Creating Statistics Sensors
 
 With the EPA guidelines in hand, the next step is to create
